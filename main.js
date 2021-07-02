@@ -33,14 +33,13 @@ function speak()
     var utterThis = new SpeechSynthesisUtterance(speak_data);
 
     synth.speak(utterThis);
-
     Webcam.attach(camera);
 
     setTimeout(function()
     {
         take_snapshot();
-        
-    },5000);
+        save();
+        }, 5000);
 }
 
 
@@ -63,7 +62,7 @@ function take_snapshot()
 function save()
 {
     link = document.getElementById("link");
-    image = document.getElementById("selfie_img").src ;
+    image = document.getElementById("selfie_image").src ;
     link.href = image;
     link.click();
 }
